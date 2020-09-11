@@ -15,7 +15,7 @@ const router = require("express").Router();
 
 
 // New Post
-router.post("api/workouts", async(req, res) => {
+router.post("/api/workouts", async(req, res) => {
     try {
         const response = await db.Workout.create({type: "workout"})
         res.json(response)
