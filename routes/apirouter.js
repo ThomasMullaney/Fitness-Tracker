@@ -1,10 +1,10 @@
-const Workouts =  require("../models/workoutmodel");
+const Workout =  require("../models/workoutmodel");
 const db = require("../models");
 const router = require("express").Router();
 
 // module.exports = function(app) {
-    router.get("api/workouts", (req, res) => {
-        db.Workout.find({}).sort({day:-1}).limit(1)
+    router.get("/api/workouts", (req, res) => {
+        db.Workout.findOne({}).sort({date:-1})
         .then(workout => {
             res.json(workout);
         })
@@ -13,16 +13,17 @@ const router = require("express").Router();
         })
     });
 
+    
+
 
 // New Post
 router.post("/api/workouts", async(req, res) => {
-    try {
-        const response = await db.Workout.create({type: "workout"})
-        res.json(response)
-    }
-    catch(err){
-        console.log("problem with post", err)
-    }
+    Workout.create({}).then(dbWorkout => {
+        res.json(dbWorkout)
+    })
+    .catch(err=> {
+        res
+    })
 });
 
 router.put("/api/workouts/:id", ({body, params}, res) => {
