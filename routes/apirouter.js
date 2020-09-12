@@ -1,4 +1,4 @@
-const mongojs  = require("mongojs");
+const mongojs = require("mongojs");
 const Workout = require("../models/workoutmodel");
 const router = require("express").Router();
 
@@ -19,12 +19,12 @@ router.post("/api/workouts", ({ body }, res) => {
     console.log("body: ", typeof body);
     const keys = Object.keys(body)
     console.log(keys)
-    if (keys === {}){
-        
+    if (keys === {}) {
+
     }
     Workout.create({}).then(dbWorkout => {
         res.json(dbWorkout)
-    })
+    }, { new: true, runValidators: true })
         .catch(err => {
             res.json(err)
         })
@@ -33,7 +33,7 @@ router.post("/api/workouts", ({ body }, res) => {
 router.put("/api/workouts/:id", (req, res) => {
     console.log("req.body: ", req.body);
     console.log("req.params.id: ", req.params.id);
-    
+
     Workout.updateOne({ _id: req.params.id },
         {
             $push: {
@@ -45,9 +45,9 @@ router.put("/api/workouts/:id", (req, res) => {
                 ],
             },
         })
-        // ,{ new: true, runValidators: true })
+        // ,{ new: false, runValidators: true })
         // The validator breaks code. No longer adds new exercises to mongo, and will not update continued workouts
-        
+
         .then((dbWorkout) => {
             console.log(dbWorkout)
             res.json(dbWorkout);
@@ -57,6 +57,23 @@ router.put("/api/workouts/:id", (req, res) => {
         });
 }
 )
+
+router.get("/api/workouts/range", (req, res) => {
+    console.log("req.body: ", req.body);
+    console.log("req.params.id: ", req.params.id)
+
+    Workout.find({})
+        .then(dbWorkout => {
+            console.log("This is dbWorkout: ", dbWorkout)
+            res.json(dbWorkout);
+        })
+        .catch(err => {
+            res.json(err);
+        });
+
+
+})
+
 
 
 
