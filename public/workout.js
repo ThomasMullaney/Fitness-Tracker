@@ -7,7 +7,7 @@ async function initWorkout() {
       .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
 
     const workoutSummary = {
-      date: formatDate(lastWorkout.day),
+      date: formatDate(lastWorkout.date),
       totalDuration: lastWorkout.totalDuration,
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
@@ -34,6 +34,7 @@ function tallyExercises(exercises) {
 }
 
 function formatDate(date) {
+  console.log(date, 'DATE')
   const options = {
     weekday: "long",
     year: "numeric",
@@ -63,7 +64,7 @@ function renderWorkoutSummary(summary) {
 
     strong.textContent = workoutKeyMap[key];
     const textNode = document.createTextNode(`: ${summary[key]}`);
-
+    console.log(summary[key], 'SUMMARY[KEY]')
     p.appendChild(strong);
     p.appendChild(textNode);
 

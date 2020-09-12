@@ -22,9 +22,12 @@ router.post("/api/workouts", ({ body }, res) => {
     if (keys === {}) {
 
     }
+
     Workout.create({}).then(dbWorkout => {
         res.json(dbWorkout)
-    }, { new: true, runValidators: true })
+    },
+
+        { new: true, runValidators: true })
         .catch(err => {
             res.json(err)
         })
@@ -55,13 +58,9 @@ router.put("/api/workouts/:id", (req, res) => {
         .catch(err => {
             res.json(err);
         });
-}
-)
+})
 
 router.get("/api/workouts/range", (req, res) => {
-    console.log("req.body: ", req.body);
-    console.log("req.params.id: ", req.params.id)
-
     Workout.find({})
         .then(dbWorkout => {
             console.log("This is dbWorkout: ", dbWorkout)
@@ -70,11 +69,52 @@ router.get("/api/workouts/range", (req, res) => {
         .catch(err => {
             res.json(err);
         });
+})
 
+router.put("/api/workouts/range", (req, res) => {
+    console.log("req.body: ", req.body);
+    console.log("req.params.id: ", req.params.id);
 
+    Workout.updateOne({ _id: req.params.id },
+        {
+            $push: {
+                exercises: [
+                    {
+                        _id: mongojs.ObjectID(),
+                        ...req.body,
+                    }
+                ],
+            },
+        })
+        // ,{ new: false, runValidators: true })
+        // The validator breaks code. No longer adds new exercises to mongo, and will not update continued workouts
+
+        .then((dbWorkout) => {
+            console.log(dbWorkout)
+            res.json(dbWorkout);
+        })
+        .catch(err => {
+            res.json(err);
+        });
 })
 
 
 
 
-module.exports = router;
+        router.post("/api/workouts/range", ({ body }, res) => {
+            console.log("body: ", typeof body);
+            const keys = Object.keys(body)
+            console.log(keys)
+            if (keys === {}) {
+
+            }
+            Workout.create({}).then(dbWorkout => {
+                res.json(dbWorkout)
+            }, { new: true, runValidators: true })
+                .catch(err => {
+                    res.json(err)
+                })
+        });
+
+
+    module.exports = router;
