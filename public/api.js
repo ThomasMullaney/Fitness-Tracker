@@ -7,7 +7,7 @@ const API = {
       console.log(err)
     }
     const json = await res.json();
-
+    console.log("Get Last Workout")
     return json[json.length - 1];
   },
   async addExercise(data) {
@@ -18,7 +18,7 @@ const API = {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
-
+    console.log("Add exercise")
     const json = await res.json();
 
     return json;
