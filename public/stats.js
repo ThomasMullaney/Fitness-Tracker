@@ -215,9 +215,11 @@ function workoutNames(data) {
 
   data.forEach(workout => {
     workout.exercises.forEach(exercise => {
+      console.log(exercise.name)
       workouts.push(exercise.name);
     });
   });
+  console.log(workouts)
   
   return workouts;
 }
