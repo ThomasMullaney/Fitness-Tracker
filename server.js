@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+mongoose.connect(process.env.MONGOATLAS_URI || "mongodb+srv://TomM:<mrniceguy911>@fitness-tracker-2020-tm.jxcw9.mongodb.net/<workout>?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
