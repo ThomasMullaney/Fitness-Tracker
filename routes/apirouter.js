@@ -1,4 +1,3 @@
-const mongojs = require("mongojs");
 const Workout = require("../models/workoutmodel");
 const router = require("express").Router();
 
