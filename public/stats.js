@@ -223,3 +223,19 @@ function workoutNames(data) {
   
   return workouts;
 }
+
+document.querySelector("#del-all-btn").onclick = function () {
+  $.ajax({
+    method: 'DELETE',
+    url: '/api/workouts/delete',
+    data: ({}),
+    success: function (response) {
+      if (response === 'error') {
+        console.log('Error!');
+      } else {
+        alert('Success');
+        location.reload();
+      }
+    }
+  });
+};

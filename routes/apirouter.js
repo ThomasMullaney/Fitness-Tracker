@@ -60,7 +60,7 @@ router.put("/api/workouts/:id", (req, res) => {
 })
 
 router.get("/api/workouts/range", (req, res) => {
-    Workout.find().sort({$natural: -1}).limit(7)
+    Workout.find().sort({ $natural: -1 }).limit(7)
         .then(dbWorkout => {
             console.log("This is dbWorkout: ", dbWorkout)
             res.json(dbWorkout);
@@ -70,6 +70,12 @@ router.get("/api/workouts/range", (req, res) => {
         });
 })
 
+router.delete("/api/workouts/delete", (req, res) => {
+    Workout.deleteMany({})
+        .then(() => {
+            res.json("deleted")
+        });
+});
 
 
-    module.exports = router;
+module.exports = router;

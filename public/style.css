@@ -406,6 +406,11 @@ form > button {
 .ui.card h2 {
   padding: 10px;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .buttons .ui.button:first-child {
   border-top-left-radius: 0;

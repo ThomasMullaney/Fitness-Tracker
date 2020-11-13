@@ -30,37 +30,38 @@ async function init() {
   }
 }
 
-function validation(){
+function validation() {
   let isValid = true;
 
-  if(workoutType === "resistance"){
-    if (nameInput.value.trim() === ""){
+  if (workoutType === "resistance") {
+    if (nameInput.value.trim() === "") {
       isValid = false;
     }
 
-    if (weight.value.trim() === ""){
+    if (weight.value.trim() === "") {
       isValid = false;
     }
-    if (sets.value.trim() === ""){
+    if (sets.value.trim() === "") {
       isValid = false;
     }
-    if (reps.value.trim() === ""){
+    if (reps.value.trim() === "") {
       isValid = false;
     }
-    if (resistanceDuration.value.trim() === ""){
+    if (resistanceDuration.value.trim() === "") {
       isValid = false;
     }
   } else
 
-  if(workoutType === "cardio") {
-    if (cardioName.value.trim() === ""){
-      isValid = false;
+    if (workoutType === "cardio") {
+      if (cardioName.value.trim() === "") {
+        isValid = false;
+      }
+      if (distance.value.trim() === "") {
+        isValid = false;
+      }
+      if (duration.value.trim() === "") {
+        isValid = false;
+      }
     }
-    if (distance.value.trim() === ""){
-      isValid = false;
-    }
-    if (duration.value.trim() === ""){
-      isValid = false;
-  }
-}
-}
+};
+
