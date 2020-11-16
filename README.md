@@ -11,6 +11,10 @@
 
 [![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
 
+<a href="https://exercise-posting-app.herokuapp.com/?id=5fb2a9db7d56e200179c7d2e"> Heroku </a> | <a href="https://github.com/ThomasMullaney/Fitness-Tracker"> GitHub </a>
+
+![Application screenshot](img/FrontPageCapture.PNG)
+![Application screenshot](img/dataBoardCapture.PNG)
 
 ## Description:
 ### An app that allows users to enter workouts performed and display the results in a graph.
