@@ -9,9 +9,21 @@
     </h4>
 </div>
 
-[![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
+<div align="center"><a name="menu"></a>
+  <h4>
+    <a href="https://exercise-posting-app.herokuapp.com/?id=5fb2a9db7d56e200179c7d2e">
+      Heroku Deployment
+    </a>
+    <span> | </span>
+    <a href="https://github.com/ThomasMullaney/Fitness-Tracker">
+      Github Repository
+    </a>
+  </h4>
+</div>
 
-<a href=">
+![Application screenshot](img/FrontPageCapture.PNG)
+![Application screenshot](img/databoardCapture.PNG)
+
 ## Description:
 ### An app that allows users to enter workouts performed and display the results in a graph.
 
