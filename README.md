@@ -11,9 +11,9 @@
 
 [![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
 
-<div class="center>
+
 <a href="https://exercise-posting-app.herokuapp.com/?id=5fb2a9db7d56e200179c7d2e"> Heroku </a> | <a href="https://github.com/ThomasMullaney/Fitness-Tracker"> GitHub </a>
-</div>
+
 
 ![Application screenshot](img/FrontPageCapture.PNG)
 ![Application screenshot](img/databoardCapture.PNG)
