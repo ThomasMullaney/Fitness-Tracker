@@ -11,7 +11,7 @@
 
 [![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
 
-
+<a href=">
 ## Description:
 ### An app that allows users to enter workouts performed and display the results in a graph.
 
@@ -29,6 +29,15 @@
 
 ## Usage:
 ### Enter your exercies and compare with past performances in regards to time until completion, and weight.
+
+## Technologies:
+<ul>
+<li>HTML, CSS, Bootstrap</li>
+<li>Javascript, jQuery</li>
+<li>MongoDB</li>
+<li>node.js, Express, Sequlize, MySQL, dotenv, Passport, Bcrypt</li>
+<li>Github, Heroku</li>
+</ul>
 
 ## License:
 ### [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
