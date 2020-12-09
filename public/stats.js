@@ -44,23 +44,27 @@ function populateChart(data) {
   let pie = document.querySelector("#canvas3").getContext("2d");
   let pie2 = document.querySelector("#canvas4").getContext("2d");
 
-  
+  // function createLabels(workouts){
+  //   for (let i=0; i < workouts.length; i++){
+  //     let labels = workouts.name[i]
+  //   }
+  // }
   let lineChart = new Chart(line, {
     type: "line",
     data: {
-      labels: [
-      //    for (let i=1; i< workouts.length; i++) {
-      //     let labels = workouts[i]
-      // }
-        workouts[0],
-        workouts[1],
-        workouts[2],
-        workouts[3],
-        workouts[4],
-        workouts[5],
-        workouts[6],
-        workouts[7],
-      
+      labels:  [ function createLabels(){  for (let i=1; i< workouts.length; i++) {
+        let labels = workouts[i] }}
+     
+   
+        // workouts[0],
+        // workouts[1],
+        // workouts[2],
+        // workouts[3],
+        // workouts[4],
+        // workouts[5],
+        // workouts[6],
+        // workouts[7],
+         
       ],
 
       datasets: [
