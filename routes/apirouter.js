@@ -59,6 +59,32 @@ router.put("/api/workouts/:id", (req, res) => {
         });
 })
 
+exports.getWorkoutByDate = async(req, res) => {
+    try {
+        let {startDate, endDate} = req.query;
+
+        if(startDate==="" || endDate===""){
+            return res.status(400).json({
+                status: 'failure',
+                message: "please select a date"
+            })
+        }
+        console.log({startDate, endDate});
+
+        const workouts = Workout.find({
+            day: {
+                $gte: new Date(new Date(startDate).setHours(00, 00, 00)),
+                $lte: new Date (new Date(endDate).setHours(23, 59, 59)) 
+            }
+        }).sort({day: 'asc'})
+    }
+   finally { res.status(200).json({
+       status:'success',
+       data: workouts
+   })
+}
+}
+
 router.get("/api/workouts/range", (req, res) => {
     Workout.find().sort({ $natural: -1 }).limit(7)
         .then(dbWorkout => {

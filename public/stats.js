@@ -1,5 +1,4 @@
 // get all workout data from back-end
-
 fetch("/api/workouts/range")
   .then(response => {
     return response.json();
@@ -296,28 +295,30 @@ $('#filter').click(function(){
   var from_date = $('#firstdatepicker').val();  
   var to_date = $('#lastdatepicker').val();  
   if(from_date != '' && to_date != '')  
-  {  
+  { 
        $.ajax({  
             url:"api/workouts/range",  
             method:"GET",  
-            data:{from_date: from_date, to_date: to_date},  
+            data:{day: from_date, day: to_date},  
             success:function(data){  
               console.log(data)
              function updateCharts(chart, label, data){
               var myCharts = lineChart, barChart, pieChart, donutChart
               myCharts.update
              }
+            }
+          })
 
-// function updateCharts(chart, label, data){
-//     chart.data.labels.push(label);
-//     chart.data.datasets.forEach((dataset) => {
-//       dataset.data.push(data);
-//     });
-//     chart.update();
-//   }
+// // function updateCharts(chart, label, data){
+// //     chart.data.labels.push(label);
+// //     chart.data.datasets.forEach((dataset) => {
+// //       dataset.data.push(data);
+// //     });
+// //     chart.update();
+// //   }
 
-            }  
-       }); 
+//             }  
+//        }); 
   }  
   else  
   {  
